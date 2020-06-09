@@ -1,0 +1,1046 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Build and run the solution on Openshift - Vaccine Cold Chain Monitoring</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#an-alternate-approach-is-to-setup-a-cicd-pipeline" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Vaccine Cold Chain Monitoring
+            </span>
+            <span class="md-header-nav__topic">
+              Build and run the solution on Openshift
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Vaccine Cold Chain Monitoring
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="What you will learn" class="md-nav__link">
+      What you will learn
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Environments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Environments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/event-streams/" title="Event Streams environment" class="md-nav__link">
+      Event Streams environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/mongo/" title="MongoDB on IBM Cloud" class="md-nav__link">
+      MongoDB on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/postgresql/" title="Postgresql on IBM Cloud" class="md-nav__link">
+      Postgresql on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/cp4d/" title="Cloud Pak for Data" class="md-nav__link">
+      Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      AI Ladder
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        AI Ladder
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Collect
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Collect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-1" type="checkbox" id="nav-3-1-1">
+    
+    <label class="md-nav__link" for="nav-3-1-1">
+      Preparing data for demonstration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-1">
+        Preparing data for demonstration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collect/generate-telemetry/" title="Generate telemetry data" class="md-nav__link">
+      Generate telemetry data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collect/cp4i-es/" title="Data ingestion and in motion with Cloud Pak for Integration" class="md-nav__link">
+      Data ingestion and in motion with Cloud Pak for Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collect/cp4d-collect-data/" title="Collect data with Cloud Pak for Data" class="md-nav__link">
+      Collect data with Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Analyze
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Analyze
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analyze/ws-ml-dev/" title="Define the anomaly detection scoring model with Watson Studio" class="md-nav__link">
+      Define the anomaly detection scoring model with Watson Studio
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Infuse
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Infuse
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev-scoring/" title="Develop scoring app with cloud pak for application" class="md-nav__link">
+      Develop scoring app with cloud pak for application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Build and run the solution on Openshift
+      </label>
+    
+    <a href="./" title="Build and run the solution on Openshift" class="md-nav__link md-nav__link--active">
+      Build and run the solution on Openshift
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#an-alternate-approach-is-to-setup-a-cicd-pipeline" title="An alternate approach is to setup a CI/CD pipeline" class="md-nav__link">
+    An alternate approach is to setup a CI/CD pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-sending-a-simulation-control-to-the-post-api" title="Test sending a simulation control to the POST api" class="md-nav__link">
+    Test sending a simulation control to the POST api
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-predictive-scoring-agent" title="The predictive scoring agent" class="md-nav__link">
+    The predictive scoring agent
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-locally" title="Run locally" class="md-nav__link">
+    Run locally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-build-and-run-on-openshift" title="Scoring: Build and run on Openshift" class="md-nav__link">
+    Scoring: Build and run on Openshift
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-docker-images" title="Build docker images" class="md-nav__link">
+    Build docker images
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-kafka-on-your-laptop" title="Run kafka on your laptop" class="md-nav__link">
+    Run kafka on your laptop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../integration-tests/" title="Run integration tests" class="md-nav__link">
+      Run integration tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Devops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Devops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev-scoring/" title="Develop the scoring app with event messaging and microprofile" class="md-nav__link">
+      Develop the scoring app with event messaging and microprofile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../devops/ci/" title="Continuous Integration" class="md-nav__link">
+      Continuous Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../devops/cd/" title="Continuous Deployment" class="md-nav__link">
+      Continuous Deployment
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../compendium/" title="Compendium" class="md-nav__link">
+      Compendium
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#an-alternate-approach-is-to-setup-a-cicd-pipeline" title="An alternate approach is to setup a CI/CD pipeline" class="md-nav__link">
+    An alternate approach is to setup a CI/CD pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-sending-a-simulation-control-to-the-post-api" title="Test sending a simulation control to the POST api" class="md-nav__link">
+    Test sending a simulation control to the POST api
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-predictive-scoring-agent" title="The predictive scoring agent" class="md-nav__link">
+    The predictive scoring agent
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-locally" title="Run locally" class="md-nav__link">
+    Run locally
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-build-and-run-on-openshift" title="Scoring: Build and run on Openshift" class="md-nav__link">
+    Scoring: Build and run on Openshift
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-docker-images" title="Build docker images" class="md-nav__link">
+    Build docker images
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-kafka-on-your-laptop" title="Run kafka on your laptop" class="md-nav__link">
+    Run kafka on your laptop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/edit/master/docs/infuse/build-run.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Build and run the solution on Openshift</h1>
+                
+                <h3 id="an-alternate-approach-is-to-setup-a-cicd-pipeline">An alternate approach is to setup a CI/CD pipeline</h3>
+<p>We have adopted the Git Action to manage the <a href="https://github.com/ibm-cloud-architecture/refarch-kc-gitops/blob/master/KContainer-CI-Strategy.md">continuous integration</a>, and ArgoCD for the continuous deployment. The build process will build the following images:</p>
+<ul>
+<li>[https://hub.docker.com/repository/docker/ibmcase/kcontainer-reefer-simulator]</li>
+</ul>
+<p>Helm charts are added for the simulator and the scoring agent, using <code>helm create</code> command, and then the values.yaml and deployment.yaml files were updated to set environment variables and other parameters.</p>
+<h2 id="test-sending-a-simulation-control-to-the-post-api">Test sending a simulation control to the POST api</h2>
+<p>The script <code>sendSimulControl.sh</code> is used for that. The usage looks like:  <code>sendSimulControl.sh hostname simultype (co2sensor | o2sensor | poweroff) containerID nb_of_records</code></p>
+<div class="codehilite"><pre><span></span>pwd
+refarch-reefer-ml
+./scripts/sendSimulControl.sh reefersimulatorroute-reefershipmentsolution.apps.green-with-envy.ocp.csplab.local co2sensor C01 2000
+</pre></div>
+
+<p>If you use no argument for this script, it will send co2sensor control to the service running on our openshift cluster on IBM Cloud.</p>
+<p>Looking at the logs from the pod using <code>oc logs reefersimulator-3-jdh2v</code> you can see something like:</p>
+<div class="codehilite"><pre><span></span>     &quot;POST /order HTTP/1.1&quot; 404 232 &quot;-&quot; &quot;curl/7.54.0&quot;
+    {&#39;containerID&#39;: &#39;c100&#39;, &#39;simulation&#39;: &#39;co2sensor&#39;, &#39;nb_of_records&#39;: 10, &#39;good_temperature&#39;: 4.4}
+    Generating  10  Co2 metrics
+</pre></div>
+
+<p>We will see how those events are processed in the next section.</p>
+<h2 id="the-predictive-scoring-agent">The predictive scoring agent</h2>
+<p>Applying the same pattern as the simulation webapp, we implement a kafka consumer and producer in python that calls the serialized analytical model. The code in the <code>scoring\eventConsumer</code> folder.</p>
+<p>Applying a TDD approach we start by a TestScoring.py class.</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">domain.predictservice</span> <span class="kn">import</span> <span class="n">PredictService</span>
+
+<span class="k">class</span> <span class="nc">TestScoreMetric</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">testCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">serv</span> <span class="o">=</span> <span class="n">PredictService</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+<p>Use the same python environment with docker:</p>
+<div class="codehilite"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">startPythonEnv</span>
+<span class="n">root</span><span class="mi">@1</span><span class="nl">de81b16f940</span><span class="p">:</span><span class="o">/</span><span class="err">#</span> <span class="n">export</span> <span class="n">PYTHONPATH</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">scoring</span><span class="o">/</span><span class="n">eventConsumer</span>
+<span class="n">root</span><span class="mi">@1</span><span class="nl">de81b16f940</span><span class="p">:</span><span class="o">/</span><span class="err">#</span> <span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">scoring</span><span class="o">/</span><span class="n">eventConsumer</span>
+<span class="n">root</span><span class="mi">@1</span><span class="nl">de81b16f940</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">scoring</span><span class="o">/</span><span class="n">eventConsumer</span><span class="err">#</span> <span class="n">python</span> <span class="n">tests</span><span class="o">/</span><span class="n">TestScoring</span><span class="p">.</span><span class="n">py</span> 
+</pre></div>
+
+<p>Test fails, so let add the scoring service with a constructor, and load the serialized pickle model (which was copied from the ml folder).</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="k">class</span> <span class="nc">PredictService</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;domain/model_logistic_regression.pkl&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;rb&quot;</span><span class="p">),</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">metricEvent</span><span class="p">):</span>
+        <span class="n">TESTDATA</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">metricEvent</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">TESTDATA</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span> <span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">FEATURES_NAMES</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+
+<p>Next we need to test a predict on an event formated as a csv string. The test looks like:</p>
+<div class="codehilite"><pre><span></span>    serv = PredictService()
+    header=&quot;&quot;&quot;Timestamp, ID, Temperature(celsius), Target_Temperature(celsius), Power, PowerConsumption, ContentType, O2, CO2, Time_Door_Open, Maintenance_Required, Defrost_Cycle&quot;&quot;&quot;
+    event=&quot;2019-04-01 T16:29 Z,1813, 101, 4.291843460900875,4.4,0,10.273342381017777,3,4334.920958996634,4.9631508046318755,1,0,6&quot;&quot;&quot;
+    record=header+&quot;\n&quot;+event
+    print(serv.predict(record))
+</pre></div>
+
+<p>So the scoring works, now we need to code the scoring application that will be deployed to Openshift cluster, and which acts as a consumer of container metrics events and a producer container events. </p>
+<p>The Scoring Agent code of this app is <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/blob/master/scoring/ScoringAgent.py">ScoringAgent.py</a> module. It starts a consumer to get messages from Kafka. And when a message is received, it needs to do some data extraction and transformation and then use the predictive service.</p>
+<p>During the tests we have issue in the data quality, so it is always a good practice to add a validation function to assess if all the records are good. For production, this code needs to be enhanced for better error handling an reporting.</p>
+<h3 id="run-locally">Run locally</h3>
+<p>Under <code>scoring\eventConsumer</code> folder, set the environment variables for KAFKA using the commands below: (It uses event streams on IBM Cloud)</p>
+<div class="codehilite"><pre><span></span>export KAFKA_BROKERS=broker-3.eventstreams.cloud.ibm.com:9093,broker-1.eventstreams.cloud.ibm.com:9093,broker-0.eventstreams.cloud.ibm.com:9093,broker-5.eventstreams.cloud.ibm.com:9093,broker-2.eventstreams.cloud.ibm.com:9093,broker-4.eventstreams.cloud.ibm.com:9093
+export KAFKA_APIKEY=&quot;set-api-key-for-eventstreams-on-cloud&quot;
+
+docker run -e KAFKA_BROKERS=$KAFKA_BROKERS -e KAFKA_APIKEY=$KAFKA_APIKEY  -v $(pwd)/..:/home -ti ibmcase/python bash -c &quot;cd /home/scoring &amp;&amp; export PYTHONPATH=/home &amp;&amp; python ScoringAgent.py&quot;
+</pre></div>
+
+<h3 id="scoring-build-and-run-on-openshift">Scoring: Build and run on Openshift</h3>
+<p>The first time we need to add the application to the existing project, run the following command:</p>
+<div class="codehilite"><pre><span></span>oc new-app python:latest~https://github.com/ibm-cloud-architecture/refarch-reefer-ml.git --context-dir=scoring/eventConsumer --name reeferpredictivescoring
+</pre></div>
+
+<p>This command will run a source to image, build all the needed yaml files for the kubernetes deployment and start the application in a pod. It use the <code>--context</code> flag to define what to build and run. With this capability we can use the same github repository for different sub component.</p>
+<p>As done for simulator, the scoring service needs environment variables. We can set them using the commands</p>
+<div class="codehilite"><pre><span></span>oc set env dc/reeferpredictivescoring KAFKA_BROKERS=$KAFKA_BROKERS
+oc set env dc/reeferpredictivescoring KAFKA_APIKEY=$KAFKA_APIKEY
+oc set env dc/reeferpredictivescoring KAFKA_CERT=/opt/app-root/src/es-cert.pem
+</pre></div>
+
+<p>but we have added a script for you to do so. This script needs only to be run at the first deployment. It leverage the common setenv scripts:</p>
+<div class="codehilite"><pre><span></span><span class="cp">../scripts/defEnvVarInOpenShift.sh </span>
+</pre></div>
+
+<p>The list of running pods should show the build pods for this application:</p>
+<div class="codehilite"><pre><span></span> oc get pods
+ reeferpredictivescoring-1-build   1/1       Running      0          24s
+</pre></div>
+
+<p>To run the build again after commit code to github:</p>
+<div class="codehilite"><pre><span></span>oc start-build reeferpredictivescoring 
+
+# or from local file system
+oc start-build reeferpredictivescoring --from-file=.
+</pre></div>
+
+<p>To see the log:</p>
+<div class="codehilite"><pre><span></span> oc logs reeferpredictivescoring-2-rxr6j
+</pre></div>
+
+<p>To be able to run on Openshift, the APP_FILE environment variable has to be set to ScoringApp.py. This can be done in the <code>environment</code> file under the <code>.s2i</code> folder.</p>
+<p>The scoring service has no API exposed to the external world, so we do not need to create a <code>Route</code> or ingress.</p>
+<p>See the <a href="#integration-tests">integration test</a> section to see a demonstration of the solution end to end.</p>
+<h3 id="build-docker-images">Build docker images</h3>
+<p>For the scoring agent:</p>
+<div class="codehilite"><pre><span></span># scoring folder
+</pre></div>
+
+<h4 id="run-kafka-on-your-laptop">Run kafka on your laptop</h4>
+<p>For development purpose, you can also run kafka, zookeeper and postgresql and the solution on your laptop. For that read <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/blob/master/docker/README.md">this readme</a> for details.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../dev-scoring/" title="Develop scoring app with cloud pak for application" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Develop scoring app with cloud pak for application
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../integration-tests/" title="Run integration tests" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Run integration tests
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

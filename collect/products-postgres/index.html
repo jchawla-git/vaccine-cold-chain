@@ -1,0 +1,863 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Define the products data into postgresql - Vaccine Cold Chain Monitoring</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#define-the-products-data-into-postgresql" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Vaccine Cold Chain Monitoring
+            </span>
+            <span class="md-header-nav__topic">
+              Define the products data into postgresql
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Vaccine Cold Chain Monitoring
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="What you will learn" class="md-nav__link">
+      What you will learn
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Environments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Environments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/event-streams/" title="Event Streams environment" class="md-nav__link">
+      Event Streams environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/mongo/" title="MongoDB on IBM Cloud" class="md-nav__link">
+      MongoDB on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/postgresql/" title="Postgresql on IBM Cloud" class="md-nav__link">
+      Postgresql on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/cp4d/" title="Cloud Pak for Data" class="md-nav__link">
+      Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      AI Ladder
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        AI Ladder
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Collect
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Collect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-1" type="checkbox" id="nav-3-1-1">
+    
+    <label class="md-nav__link" for="nav-3-1-1">
+      Preparing data for demonstration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-1">
+        Preparing data for demonstration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../generate-telemetry/" title="Generate telemetry data" class="md-nav__link">
+      Generate telemetry data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cp4i-es/" title="Data ingestion and in motion with Cloud Pak for Integration" class="md-nav__link">
+      Data ingestion and in motion with Cloud Pak for Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cp4d-collect-data/" title="Collect data with Cloud Pak for Data" class="md-nav__link">
+      Collect data with Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Analyze
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Analyze
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analyze/ws-ml-dev/" title="Define the anomaly detection scoring model with Watson Studio" class="md-nav__link">
+      Define the anomaly detection scoring model with Watson Studio
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Infuse
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Infuse
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/dev-scoring/" title="Develop scoring app with cloud pak for application" class="md-nav__link">
+      Develop scoring app with cloud pak for application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/build-run/" title="Build and run the solution on Openshift" class="md-nav__link">
+      Build and run the solution on Openshift
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/integration-tests/" title="Run integration tests" class="md-nav__link">
+      Run integration tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Devops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Devops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/dev-scoring/" title="Develop the scoring app with event messaging and microprofile" class="md-nav__link">
+      Develop the scoring app with event messaging and microprofile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../devops/ci/" title="Continuous Integration" class="md-nav__link">
+      Continuous Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../devops/cd/" title="Continuous Deployment" class="md-nav__link">
+      Continuous Deployment
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../compendium/" title="Compendium" class="md-nav__link">
+      Compendium
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-job-running-on-remote-cluster" title="Kubernetes Job running on remote cluster" class="md-nav__link">
+    Kubernetes Job running on remote cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-image-running-on-local-machine" title="Docker image running on local machine" class="md-nav__link">
+    Docker image running on local machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postgresql-cli-psql-running-on-local-machine" title="Postgresql CLI (psql) running on local machine" class="md-nav__link">
+    Postgresql CLI (psql) running on local machine
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/edit/master/docs/collect/products-postgres.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="define-the-products-data-into-postgresql">Define the products data into postgresql</h1>
+<p>The Simulator references product data stored in a Postgresql database.  There are multiple ways to populate this database depending on your level of experience with Postgresql, database services, and your local development environment.</p>
+<p>We have provided the following documented methods for populating the Product database:</p>
+<ol>
+<li><a href="#kubernetes-job-running-on-remote-cluster">Kubernetes Job running on remote cluster</a> <em>(RECOMMENDED)</em></li>
+<li><a href="#docker-image-running-on-local-machine">Docker image running on local machine</a></li>
+<li><a href="#postgresql-cli-psql-running-on-local-machine">Postgresql CLI (psql) running on local machine</a></li>
+</ol>
+<h2 id="kubernetes-job-running-on-remote-cluster">Kubernetes Job running on remote cluster</h2>
+<p>In an effort to keep development systems as clean as possible and speed up deployment of various scenarios, our deployment tasks have been encapsulated in <a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">Kubernetes Jobs</a>. These are runnable on any Kubernetes platform, including OpenShift.</p>
+<ol>
+<li>Following the configuration prerequisistes defined in the <a href="https://ibm-cloud-architecture.github.io/refarch-kc/deployments/backing-services/#using-postgresql-hosted-on-ibm-cloud">Backing Services</a> documentation for using <a href="https://cloud.ibm.com/catalog/services/databases-for-postgresql">Databases for PostgreSQL</a> on IBM Cloud, you should already have the following Kubernetes Secrets defined in your target namespace:<ol>
+<li><code>postgresql-url</code> <em>(in the format of <code>jdbc:postgresql://&lt;hostname&gt;:&lt;port&gt;/&lt;database-name&gt;?sslmode=...</code>)</em>
+  <div class="codehilite"><pre><span></span>kubectl create secret generic postgresql-url --from-literal<span class="o">=</span><span class="nv">binding</span><span class="o">=</span><span class="s1">&#39;jdbc:postgresql://&lt;hostname&gt;:&lt;port&gt;/&lt;database-name&gt;?sslmode=...&#39;</span>
+</pre></div></li>
+<li><code>postgresql-user</code>
+  <div class="codehilite"><pre><span></span>kubectl create secret generic postgresql-user --from-literal<span class="o">=</span><span class="nv">binding</span><span class="o">=</span><span class="s1">&#39;ibm_cloud_...&#39;</span>
+</pre></div></li>
+<li><code>postgresql-pwd</code>
+  <div class="codehilite"><pre><span></span>kubectl create secret generic postgresql-pwd --from-literal<span class="o">=</span><span class="nv">binding</span><span class="o">=</span><span class="s1">&#39;1a2...9z0&#39;</span>
+</pre></div></li>
+<li><code>postgresql-ca-pem</code> <em>(this requires use of the <a href="https://cloud.ibm.com/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference">Cloud Databases CLI Plug-in</a> for the IBM Cloud CLI)</em>
+  <div class="codehilite"><pre><span></span>ibmcloud cdb deployment-cacert <span class="o">[</span>PostgreSQL on IBM Cloud service instance name<span class="o">]</span> &gt; postgres.crt
+kubectl create secret generic postgresql-ca-pem --from-literal<span class="o">=</span><span class="nv">binding</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat postgres.crt<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div></li>
+</ol>
+</li>
+<li>Create the <code>create-postgres-tables</code> Job from the root of the <code>refarch-reefer-ml</code> repository:
+<div class="codehilite"><pre><span></span>kubectl apply -f scripts/createPGtables.yaml
+</pre></div></li>
+<li>You can tail the created pod's output to see the progress of the database initialization:
+<div class="codehilite"><pre><span></span>kubectl logs -f --selector<span class="o">=</span>job-name<span class="o">=</span>create-postgres-tables
+</pre></div></li>
+</ol>
+<h2 id="docker-image-running-on-local-machine">Docker image running on local machine</h2>
+<p>The simulator code includes the <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/blob/master/simulator/infrastructure/ProductRepository.py">infrastructure/ProductRepository.py</a> that creates tables and adds some product definitions inside the table.</p>
+<ol>
+<li>Uncomment line 101 from <code>/simulator/infrastructure/ProductRepository.py</code>:
+<div class="codehilite"><pre><span></span><span class="c1"># repo.populateProductsReferenceData()</span>
+</pre></div></li>
+<li>The following command is using our python environment docker image and the python code:
+<div class="codehilite"><pre><span></span>./scripts/createPGTables.sh IBMCLOUD
+</pre></div></li>
+</ol>
+<h2 id="postgresql-cli-psql-running-on-local-machine">Postgresql CLI (psql) running on local machine</h2>
+<p>An alternate techniques is to use <a href="https://www.postgresql.org/docs/9.3/app-psql.html">psql</a> as described in this section. Previous experience with PSQL is recommended.</p>
+<ul>
+<li>We use a docker image to run psql:</li>
+</ul>
+<div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> scripts
+$ ./startPsql.sh IBMCLOUD
+$ <span class="nv">PGPASSWORD</span><span class="o">=</span><span class="nv">$POSTGRES_PWD</span> psql --host<span class="o">=</span><span class="nv">$HOST</span> --port<span class="o">=</span><span class="nv">$PORT</span> --username<span class="o">=</span><span class="nv">$POSTGRES_USER</span> --dbname<span class="o">=</span><span class="nv">$POSTGRES_DB</span>
+<span class="nv">ibmclouddb</span> <span class="o">=</span>&gt;
+</pre></div>
+
+<ul>
+<li>List relations...</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="gp">ibmclouddb =&gt;</span> <span class="kp">\d</span>
+</pre></div>
+
+<ul>
+<li>Then create table if not done before:</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="gp">ibmclouddb =&gt;</span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">products</span> <span class="p">(</span>
+    <span class="n">product_id</span> <span class="nb">varchar</span><span class="p">(</span><span class="mf">64</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">description</span> <span class="nb">varchar</span><span class="p">(</span><span class="mf">100</span><span class="p">),</span>
+    <span class="n">target_temperature</span> <span class="nb">REAL</span><span class="p">,</span>
+    <span class="n">target_humidity_level</span> <span class="nb">REAL</span>
+<span class="p">);</span>
+</pre></div>
+
+<ul>
+<li>Populate the data:</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="gp">ibmclouddb =&gt;</span> <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">products</span><span class="p">(</span><span class="n">product_id</span><span class="p">,</span><span class="n">description</span><span class="p">,</span><span class="n">target_temperature</span><span class="p">,</span><span class="n">target_humidity_level</span><span class="p">)</span> <span class="k">VALUES</span>
+<span class="p">(</span><span class="s1">&#39;P01&#39;</span><span class="p">,</span><span class="s1">&#39;Carrots&#39;</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;P02&#39;</span><span class="p">,</span><span class="s1">&#39;Banana&#39;</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">0.6</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;P03&#39;</span><span class="p">,</span><span class="s1">&#39;Salad&#39;</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;P04&#39;</span><span class="p">,</span><span class="s1">&#39;Avocado&#39;</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">0.4</span><span class="p">),</span>
+<span class="p">(</span><span class="s1">&#39;P05&#39;</span><span class="p">,</span><span class="s1">&#39;Tomato&#39;</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">0.4</span><span class="p">);</span>
+</pre></div>
+
+<ul>
+<li>List the products</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">products</span><span class="p">;</span>
+</pre></div>
+
+<p>You should see:
+<div class="codehilite"><pre><span></span> <span class="n">product_id</span> <span class="o">|</span> <span class="n">description</span> <span class="o">|</span> <span class="n">target_temperature</span> <span class="o">|</span> <span class="n">target_humidity_level</span> <span class="o">|</span> <span class="n">content_type</span>
+<span class="c1">------------+-------------+--------------------+-----------------------+--------------</span>
+ <span class="n">P01</span>        <span class="o">|</span> <span class="n">Carrots</span>     <span class="o">|</span>                  <span class="mf">4</span> <span class="o">|</span>                   <span class="mf">0.4</span> <span class="o">|</span>            <span class="mf">1</span>
+ <span class="n">P02</span>        <span class="o">|</span> <span class="n">Banana</span>      <span class="o">|</span>                  <span class="mf">6</span> <span class="o">|</span>                   <span class="mf">0.6</span> <span class="o">|</span>            <span class="mf">2</span>
+ <span class="n">P03</span>        <span class="o">|</span> <span class="n">Salad</span>       <span class="o">|</span>                  <span class="mf">4</span> <span class="o">|</span>                   <span class="mf">0.4</span> <span class="o">|</span>            <span class="mf">1</span>
+ <span class="n">P04</span>        <span class="o">|</span> <span class="n">Avocado</span>     <span class="o">|</span>                  <span class="mf">6</span> <span class="o">|</span>                   <span class="mf">0.4</span> <span class="o">|</span>            <span class="mf">2</span>
+ <span class="n">P05</span>        <span class="o">|</span> <span class="n">Tomato</span>      <span class="o">|</span>                  <span class="mf">6</span> <span class="o">|</span>                   <span class="mf">0.3</span> <span class="o">|</span>            <span class="mf">6</span>
+</pre></div></p>
+<ul>
+<li>Exit the PSQL environment</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="gp">ibmclouddb =&gt;</span> <span class="kp">\q</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

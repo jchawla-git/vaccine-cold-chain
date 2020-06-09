@@ -1,0 +1,1107 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Continuous Deployment - Vaccine Cold Chain Monitoring</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#continuous-deployment" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Vaccine Cold Chain Monitoring
+            </span>
+            <span class="md-header-nav__topic">
+              Continuous Deployment
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Vaccine Cold Chain Monitoring
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="What you will learn" class="md-nav__link">
+      What you will learn
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Environments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Environments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/event-streams/" title="Event Streams environment" class="md-nav__link">
+      Event Streams environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/mongo/" title="MongoDB on IBM Cloud" class="md-nav__link">
+      MongoDB on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/postgresql/" title="Postgresql on IBM Cloud" class="md-nav__link">
+      Postgresql on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/cp4d/" title="Cloud Pak for Data" class="md-nav__link">
+      Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      AI Ladder
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        AI Ladder
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Collect
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Collect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-1" type="checkbox" id="nav-3-1-1">
+    
+    <label class="md-nav__link" for="nav-3-1-1">
+      Preparing data for demonstration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-1">
+        Preparing data for demonstration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collect/generate-telemetry/" title="Generate telemetry data" class="md-nav__link">
+      Generate telemetry data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collect/cp4i-es/" title="Data ingestion and in motion with Cloud Pak for Integration" class="md-nav__link">
+      Data ingestion and in motion with Cloud Pak for Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collect/cp4d-collect-data/" title="Collect data with Cloud Pak for Data" class="md-nav__link">
+      Collect data with Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Analyze
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Analyze
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analyze/ws-ml-dev/" title="Define the anomaly detection scoring model with Watson Studio" class="md-nav__link">
+      Define the anomaly detection scoring model with Watson Studio
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Infuse
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Infuse
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/dev-scoring/" title="Develop scoring app with cloud pak for application" class="md-nav__link">
+      Develop scoring app with cloud pak for application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/build-run/" title="Build and run the solution on Openshift" class="md-nav__link">
+      Build and run the solution on Openshift
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/integration-tests/" title="Run integration tests" class="md-nav__link">
+      Run integration tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Devops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Devops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/dev-scoring/" title="Develop the scoring app with event messaging and microprofile" class="md-nav__link">
+      Develop the scoring app with event messaging and microprofile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ci/" title="Continuous Integration" class="md-nav__link">
+      Continuous Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Continuous Deployment
+      </label>
+    
+    <a href="./" title="Continuous Deployment" class="md-nav__link md-nav__link--active">
+      Continuous Deployment
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#argocd-deployments" title="ArgoCD deployments" class="md-nav__link">
+    ArgoCD deployments
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploying-a-microservice-with-argocd" title="Deploying a microservice with ArgoCD" class="md-nav__link">
+    Deploying a microservice with ArgoCD
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-argocd-dashboard" title="Using the ArgoCD dashboard" class="md-nav__link">
+    Using the ArgoCD dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-command-line-interface" title="Using the command-line interface" class="md-nav__link">
+    Using the command-line interface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tekton-appsody-deployments" title="Tekton &amp; Appsody deployments" class="md-nav__link">
+    Tekton &amp; Appsody deployments
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploying-the-simulator-microservice-with-tekton-appsody" title="Deploying the simulator microservice with Tekton &amp; Appsody" class="md-nav__link">
+    Deploying the simulator microservice with Tekton &amp; Appsody
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-command-line-interface_1" title="Using the command-line interface" class="md-nav__link">
+    Using the command-line interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-tekton-dashboard" title="Using the Tekton dashboard" class="md-nav__link">
+    Using the Tekton dashboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../compendium/" title="Compendium" class="md-nav__link">
+      Compendium
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#argocd-deployments" title="ArgoCD deployments" class="md-nav__link">
+    ArgoCD deployments
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploying-a-microservice-with-argocd" title="Deploying a microservice with ArgoCD" class="md-nav__link">
+    Deploying a microservice with ArgoCD
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-argocd-dashboard" title="Using the ArgoCD dashboard" class="md-nav__link">
+    Using the ArgoCD dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-command-line-interface" title="Using the command-line interface" class="md-nav__link">
+    Using the command-line interface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tekton-appsody-deployments" title="Tekton &amp; Appsody deployments" class="md-nav__link">
+    Tekton &amp; Appsody deployments
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploying-the-simulator-microservice-with-tekton-appsody" title="Deploying the simulator microservice with Tekton &amp; Appsody" class="md-nav__link">
+    Deploying the simulator microservice with Tekton &amp; Appsody
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-command-line-interface_1" title="Using the command-line interface" class="md-nav__link">
+    Using the command-line interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-tekton-dashboard" title="Using the Tekton dashboard" class="md-nav__link">
+    Using the Tekton dashboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/edit/master/docs/devops/cd.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="continuous-deployment">Continuous Deployment</h1>
+<p>Our Continuous Deployment (CD) approach focuses on a GitOps-based deployment model, using Git as a single source of truth for the deployment, management, and operations of our running application components. In this model, we have the flexibility to use multiple open-source to apply the single source of truth from a given Git repository onto a desired cluster environment. More detail around the background of GitOps and how it differs from traditional deployment models can be found in <a href="https://www.weave.works/technologies/gitops/">this blog post</a> from WeaveWorks.</p>
+<p>One of the main tools that we use in this space is a GitOps-focused continuous deployment project named <a href="https://argoproj.github.io/argo-cd/">ArgoCD</a>. As documented by the <a href="https://ibm-garage-cloud.github.io/ibm-garage-developer-guide/guides/continuous-delivery">IBM Garage for Cloud</a> team, ArgoCD can monitor GitHub-based projects and apply changes stored in that repository's YAML files to a running Kubernetes-based cluster. We have documented our general ArgoCD Continuous Delivery workflow in the <a href="https://github.com/ibm-cloud-architecture/refarch-kc-gitops">ibm-cloud-architecture/refarch-kc-gitops</a> repository. The details of our ArgoCD-based GitOps deployments are covered in the <a href="#argocd-deployments">ArgoCD deployments</a> section below.</p>
+<p>Another DevOps tool which provides the opportunity to deployment applications via the GitOps methodology is <a href="https://tekton.dev/">Tekton</a>. The Tekton Pipelines project provides a declarative language for defining and executing both CI and CD-style pipelines, all defined with common Kubernetes-like nomenclature. It even has the capability to kick off pipeline runs based off of GitHub webhooks. The details of our Tekton &amp; Appsody deployments are covered in the <a href="#tekton-appsody-deployments">Tekton &amp; Appsody deployments</a> section below.</p>
+<h2 id="argocd-deployments">ArgoCD deployments</h2>
+<p>Our main continuous deployment pattern operates on the same principle of <em>"zero-infrastructure overhead"</em> as our <a href="../ci/">continuous integration</a> implementations. This allows us to be agile, adaptable, and efficient in what we deploy where.  ArgoCD is a perfect companion to this principle, as we do not need additional long-running CD infrastructure to monitor either a source environment or a target deployment environment. Our CI process sits with our code (on the same hosted infrastructure), while our CD process sits with the target deployment environment (on the same Kubernetes-based cluster).</p>
+<p><img alt="Argo CD" src="../images/argocd-cd.png" /></p>
+<p>To utilize ArgoCD in this manner, we define a set of Kubernetes YAMLs generated from <code>helm template</code> commands, with environment, namespace, and cluster-specific parameters provided as needed.  The details of generating those <code>helm template</code> YAMLs can be found in our main <a href="https://ibm-cloud-architecture.github.io/refarch-kc/deployments/application-components/#deploy-application-microservices">Application Components</a> documentation. The templated YAMLs are generated with the names of the required ConfigMaps and Secrets specific to a namespace on the eventual target deployment cluster. This allows us to create a deployment artifact programmatically without exposing confidential and secret credentials via source code.</p>
+<p>Once these YAMLs are generated, they are checked in to the main <a href="https://github.com/ibm-cloud-architecture/refarch-kc-gitops">GitOps repository</a> for the project, under a new branch with a branch name in the format of <code>&lt;namespace&gt;/&lt;cluster&gt;</code> for ease of identification. These will then have a folder structure of <code>/&lt;component-name&gt;/templates/&lt;artifact-type&gt;.yaml</code>, with most components providing Deployment, Service, and Route artifact YAMLs.</p>
+<p>An ArgoCD application is then created on the ArgoCD deployment inside the target environment that can read from the GitOps repository. ArgoCD can also deploy between clusters, which does come in handy in certain use cases, but remember our squads main goal of <em>"zero-infrastructure overhead"</em>, so we deploy from ArgoCD into the same cluster it is deployed on the majority of the time. The ArgoCD application is a Custom-Resource Definition, comprising of the details necessary to determine the remote code repository URL, the branch of the code to use, the target namespace, and any formatting capabilities that are necessary.</p>
+<p><img alt="Argo CD - Application Topology" src="../images/argocd-application-topology.png" /></p>
+<p>ArgoCD then handles automatically (or manually) syncing the deployments in the target namespace with the state that is described in the YAMLs on the specific branch in the GitOps repository. To keep in sync with the continuous integration implementation we have defined in <a href="../ci/">Continuous integration</a>, we have an additional GitHub Actions workflow defined in this repository that will update the YAML files contained in the repository with the latest microservice container images as they are modified, thus enabling a completely automated build-to-deployment lifecycle.</p>
+<p>Defined in the <a href="https://github.com/ibm-cloud-architecture/refarch-kc-gitops/blob/master/.github/workflows/update-gitops-deployments-(eda-integration).yaml">.github/workflows/update-gitops-deployments-(eda-integration).yaml</a> workflow file, the workflow will scan the repository for all templated use of container images in Kubernetes Deployment files (and recently updated to be extensible to any YAML-based file!), search Docker Hub for the latest version of that container image, update the YAML file in-place, and check in the YAML updates back to the same repository and branch. This process is kicked off by the webhook Jobs mentioned in our CI process, as well as on a regularly-scheduled cron-like timer.</p>
+<h3 id="deploying-a-microservice-with-argocd">Deploying a microservice with ArgoCD</h3>
+<p>You can deploy both the <code>simulator</code> and the <code>scoring-mp</code> microservices using ArgoCD in this reference implementation. The process is the same for either microservice, with minor parameter configuration being the only difference between the two.</p>
+<h4 id="prerequisites">Prerequisites</h4>
+<ol>
+<li>Ensure all necessary Kubernetes ConfigMaps and Secrets have been created in the namespace in which the application will be running.</li>
+<li>Ensure ArgoCD has been deployed to the local cluster with connectivity to the internet.</li>
+</ol>
+<h4 id="using-the-argocd-dashboard">Using the ArgoCD dashboard</h4>
+<ol>
+<li>Access the ArgoCD Dashboard via it's exposed Route in the <code>argocd</code> namespace. This should be in the form of <code>https://argocd-server-argocd.apps.green.ocp.csplab.local</code>.</li>
+<li>Depending upon your cluster and ArgoCD, you will have specific login credentials. Login as directed and click <strong>NEW APPLICATION</strong>.</li>
+<li>Enter the following parameters for either the <em><strong>SpringContainerMS</strong></em> or <em><strong>scoring-mp</strong></em> microservice and click <strong>CREATE</strong>.<ul>
+<li><strong>SpringContainerMS</strong><ul>
+<li><strong>Application Name:</strong> <code>springcontainerms</code></li>
+<li><strong>Project:</strong> Select <code>default</code> from the drop-down</li>
+<li><strong>Sync Policy:</strong> Select <code>Automatic</code> from the drop-down</li>
+<li><strong>Repository URL:</strong> <code>https://github.com/ibm-cloud-architecture/refarch-kc-gitops.git</code></li>
+<li><strong>Revision:</strong> <code>eda-sandbox/api-green-ocp-csplab-local</code> <em>(this is the branch in the GitOps repository for our specific project on our specific cluster)</em></li>
+<li><strong>Path:</strong> <code>springcontainerms</code></li>
+<li><strong>Cluster:</strong> <code>https://kubernetes.default.svc</code> <em>(this is our local cluster)</em></li>
+<li><strong>Namespace:</strong> Your desired target namespace</li>
+<li>Check the <strong>Directory: Include subdirectories</strong> checkbox</li>
+</ul>
+</li>
+<li><strong>scoring-mp</strong><ul>
+<li><strong>Application Name:</strong> <code>scoring-mp</code></li>
+<li><strong>Project:</strong> Select <code>default</code> from the drop-down</li>
+<li><strong>Sync Policy:</strong> Select <code>Automatic</code> from the drop-down</li>
+<li><strong>Repository URL:</strong> <code>https://github.com/ibm-cloud-architecture/refarch-kc-gitops.git</code></li>
+<li><strong>Revision:</strong> <code>eda-sandbox/api-green-ocp-csplab-local</code> <em>(this is the branch in the GitOps repository for our specific project on our specific cluster)</em></li>
+<li><strong>Path:</strong> <code>scoring-mp</code></li>
+<li><strong>Cluster:</strong> <code>https://kubernetes.default.svc</code> <em>(this is our local cluster)</em></li>
+<li><strong>Namespace:</strong> Your desired target namespace</li>
+<li>Check the <strong>Directory: Include subdirectories</strong> checkbox</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Once the application is successfully created inside ArgoCD, you can click the application tile to see the latest status of the ArgoCD-managed, GitOps-deployed microservice instance. It should begin synchronizing immediately upon creation.</li>
+<li>As ArgoCD applies the desired configuration to the cluster, you should see the pods of the microservice being created:
+<div class="codehilite"><pre><span></span>kubectl get Pods
+</pre></div></li>
+</ol>
+<h4 id="using-the-command-line-interface">Using the command-line interface</h4>
+<p>ArgoCD provides a command-line interface as well, however we are not covering that in this reference implementation. Once you are satisfied with the ArgoCD dashboard-based deployment pattern, you can reference the <a href="https://argoproj.github.io/argo-cd/getting_started/">ArgoCD Getting Started docs</a> for further details on using the <a href="https://argoproj.github.io/argo-cd/cli_installation/">ArgoCD CLI</a> and CRD YAMLs for programmatic interaction.</p>
+<h2 id="tekton-appsody-deployments">Tekton &amp; Appsody deployments</h2>
+<p>We have also implemented some facets of the project deployment workflows using the <a href="https://tekton.dev/">Tekton Pipelines</a> project and its inherent ease of support of the <a href="https://appsody.dev/">Appsody</a> open-source developer experience project through the standard integration between the two built into the <a href="https://kabanero.io/">Kabanero</a> open-source project, or more formally, the <a href="https://www.ibm.com/cloud/cloud-pak-for-applications">IBM Cloud Pak for Applications</a>.</p>
+<p><img alt="Argo CD" src="../images/tekton-cd.png" /></p>
+<p>Defined in the <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/tree/master/scripts/tekton">/scripts/tekton</a> directory, we have a simple pipeline that will utilize the <code>appsody deploy</code> command to deploy the generated AppsodyApplication CRD YAML to the target environment. Similar to our ArgoCD-based deployments of Helm-generated, standard Kubernetes YAMLs, AppsodyApplication YAMLs can also be deployed through ArgoCD in a GitOps manner. However, for demonstration inside this project, additional capabilities are provided to showcase how we can utilize different pieces of the platform to deploy similar applications when different requirements are presented. Similar to ArgoCD, Tekton Pipelines run on the same cluster <em>(and often in the same namespace!)</em> as your running application code, thus allowing for more programmatic control over the deployment, management, operations, and existence of your application components.</p>
+<p>The key artifact that enables Tekton to deploy our Appsody-based <code>refarch-reefer-ml/simulator</code> microservice is the generated <code>app-deploy.yaml</code> file. The <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/blob/master/simulator/app-deploy.yaml">refarch-reefer-ml/simulator/app-deploy.yaml</a> file was generated according to the <code>appsody build</code> command and then annotated with the required environment variables and metadata for successful operation in a given namespace, very similar to the pattern required for generating our Helm-templated YAMLs in the <a href="#argocd-deployments">ArgoCD deployments</a> section above.</p>
+<p><img alt="Tekton CD - Dashboard" src="../images/tekton-create-pr.png" /></p>
+<p>We then make use of the <a href="https://appsody.dev/docs/using-appsody/building-and-deploying#deployment-via-the-appsody-operator---overview">Appsody Operator</a> to apply the AppsodyApplication to the target environment through the <code>appsody deploy --no-build</code> command. As documented in the <a href="https://appsody.dev/docs/using-appsody/building-and-deploying#deploying-your-application-through-docker-hub">Appsody Docs</a>, we are able to take advantage of the pre-built container images available on Docker Hub and the annotated <code>app-deploy.yaml</code> file that is now a synonymous GitOps-like deployment artifact to quickly apply the change to the target namespace in the same cluster. Once the <code>appsody deploy</code> command is succesful, the Appsody Operator and Kubernetes takes care of the rest and reconciles the necessary underlying Kubernetes artifacts that are required to fulfill the requirements of serving up the application code in real-time!</p>
+<p><img alt="Tekton CD - PipelineRun Logs" src="../images/tekton-pr-logs.png" /></p>
+<h3 id="deploying-the-simulator-microservice-with-tekton-appsody">Deploying the simulator microservice with Tekton &amp; Appsody</h3>
+<h4 id="prerequisites_1">Prerequisites</h4>
+<ol>
+<li>Ensure all necessary Kubernetes ConfigMaps and Secrets have been created in the namespace in which the application will be running.</li>
+<li>Ensure an <a href="https://appsody.dev/docs/using-appsody/building-and-deploying#deployment-via-the-appsody-operator---overview">Appsody Operator</a> has been configured to watch the namespace in which the application will be running.</li>
+<li>Create a new or modify an existing Service Account in the target namespace and bind the required API RBAC requirements for the Appsody Operator.<ul>
+<li>Further details available in the <a href="https://appsody.dev/docs/using-appsody/building-and-deploying#rbac-considerations-for-the-use-of-appsody-deploy-and-appsody-operator-commands">Appsody Docs</a></li>
+<li>A sample YAML document has been provided via <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/blob/master/scripts/tekton/rbac-sa.yaml">rbac-sa.yaml</a>, with environment-specific updates to the Namespace and Service Account name fields being required.</li>
+</ul>
+</li>
+<li>From the <code>refarch-reefer-ml</code> directory, import the Tekton pipeline artifacts:
+<div class="codehilite"><pre><span></span>kubectl apply -f scripts/tekton/
+</pre></div></li>
+<li>Validate these items have been imported successfully by querying the cluster:
+<div class="codehilite"><pre><span></span>kubectl get Pipeline,Task,PipelineResource
+</pre></div></li>
+</ol>
+<h4 id="using-the-command-line-interface_1">Using the command-line interface</h4>
+<ol>
+<li>Open the <code>/scripts/tekton/manual/simulator-pipeline-run.yaml</code> file in a text editor and ensure everything makes sense.</li>
+<li>Kick off a new pipeline run with the Kubernetes CLI:
+<div class="codehilite"><pre><span></span>kubectl create -f scripts/tekton/manual/simulator-pipeline-run.yaml
+</pre></div></li>
+<li>You can monitor the pipeline by common <code>kubectl get</code> and <code>kubectl describe</code> commands:
+<div class="codehilite"><pre><span></span>kubectl get PipelineRun
+</pre></div>
+For further details on how to access the logs of a PipelineRun, reference the <a href="https://github.com/tektoncd/pipeline/blob/v0.9.2/docs/logs.md">Tekton Pipelines documentation</a>.</li>
+<li>Once the pipeline completes, you should see a deployed instance of the Simulator Appsody application:
+<div class="codehilite"><pre><span></span>kubectl get Pods
+</pre></div></li>
+</ol>
+<h4 id="using-the-tekton-dashboard">Using the Tekton dashboard</h4>
+<ol>
+<li>Access the Tekton Pipelines dashboard from your Kabanero installation or directly via the defined Route. This will be something similar to <a href="https://tekton-dashboard-tekton-pipelines.apps.green.ocp.csplab.local">https://tekton-dashboard-tekton-pipelines.apps.green.ocp.csplab.local</a>.</li>
+<li>Click <strong>PipelineRuns</strong> in the left-nav menu and click <strong>Create PipelineRun</strong> from the upper-right of the page.</li>
+<li>Enter the following parameters and click <strong>Create</strong>:<ul>
+<li><strong>Namespace:</strong> Target namespace for application deployment target</li>
+<li><strong>Pipeline:</strong> <code>appsody-deploy-pipeline</code></li>
+<li><strong>PipelineResources &gt; git-source:</strong> <code>git-source-reefer-ml</code></li>
+<li><strong>Params &gt; context:</strong> <code>simulator</code></li>
+<li><strong>Service Account:</strong> <code>reefer-simulator</code></li>
+</ul>
+</li>
+<li>A new PipelineRun will be created. Click on the name of the running PipelineRun.</li>
+<li>From here, you can monitor the live running logs of the pipeline, as well as see what is running from the command-line with Kubectl (<code>kubectl get pods</code>). Note that the pipeline is actually running in pods deployed to the target namespace!</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ci/" title="Continuous Integration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Continuous Integration
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Engineer dispatching with Business process with Cloud Pak for Automation
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1345 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Generate telemetry data - Vaccine Cold Chain Monitoring</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#generate-telemetry-data-in-mongodb" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Vaccine Cold Chain Monitoring
+            </span>
+            <span class="md-header-nav__topic">
+              Generate telemetry data
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Vaccine Cold Chain Monitoring
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="What you will learn" class="md-nav__link">
+      What you will learn
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Environments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Environments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/event-streams/" title="Event Streams environment" class="md-nav__link">
+      Event Streams environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/mongo/" title="MongoDB on IBM Cloud" class="md-nav__link">
+      MongoDB on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/postgresql/" title="Postgresql on IBM Cloud" class="md-nav__link">
+      Postgresql on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/cp4d/" title="Cloud Pak for Data" class="md-nav__link">
+      Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      AI Ladder
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        AI Ladder
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Collect
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Collect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-1" type="checkbox" id="nav-3-1-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-1">
+      Preparing data for demonstration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-1">
+        Preparing data for demonstration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Generate telemetry data
+      </label>
+    
+    <a href="./" title="Generate telemetry data" class="md-nav__link md-nav__link--active">
+      Generate telemetry data
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-save-telemetry-data-with-kubernetes-job-running-on-remote-cluster" title="Create and save telemetry data with Kubernetes Job running on remote cluster" class="md-nav__link">
+    Create and save telemetry data with Kubernetes Job running on remote cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-local-telemetry-data-manually" title="Create local telemetry data manually" class="md-nav__link">
+    Create local telemetry data manually
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-data-as-csv-file" title="Generate data as csv file" class="md-nav__link">
+    Generate data as csv file
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-the-python-environment" title="Start the python environment" class="md-nav__link">
+    Start the python environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-power-off-metrics" title="Generate power off metrics" class="md-nav__link">
+    Generate power off metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-co2-sensor-malfunction-in-same-file" title="Generate Co2 sensor malfunction in same file" class="md-nav__link">
+    Generate Co2 sensor malfunction in same file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-o2-sensor-malfunction-in-same-file" title="Generate O2 sensor malfunction in same file" class="md-nav__link">
+    Generate O2 sensor malfunction in same file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-local-telemetry-data-to-mongodb" title="Save local telemetry data to MongoDB" class="md-nav__link">
+    Save local telemetry data to MongoDB
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-mongodb-as-service-on-ibm-cloud" title="Using Mongodb as service on IBM Cloud" class="md-nav__link">
+    Using Mongodb as service on IBM Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-python-environment" title="Start python environment" class="md-nav__link">
+    Start python environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-data-from-csv-file" title="Add data from csv file" class="md-nav__link">
+    Add data from csv file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-data-using-the-telemetry-repository-of-the-simulator" title="Add data using the telemetry repository of the simulator" class="md-nav__link">
+    Add data using the telemetry repository of the simulator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-data-with-mongo-cli" title="Verify data with mongo CLI" class="md-nav__link">
+    Verify data with mongo CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-mongodb-on-openshift-42-on-premise" title="Using MongoDB on Openshift 4.2 on-premise" class="md-nav__link">
+    Using MongoDB on Openshift 4.2 on-premise
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-records-in-database" title="Delete records in database" class="md-nav__link">
+    Delete records in database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cp4i-es/" title="Data ingestion and in motion with Cloud Pak for Integration" class="md-nav__link">
+      Data ingestion and in motion with Cloud Pak for Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cp4d-collect-data/" title="Collect data with Cloud Pak for Data" class="md-nav__link">
+      Collect data with Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Analyze
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Analyze
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analyze/ws-ml-dev/" title="Define the anomaly detection scoring model with Watson Studio" class="md-nav__link">
+      Define the anomaly detection scoring model with Watson Studio
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Infuse
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Infuse
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/dev-scoring/" title="Develop scoring app with cloud pak for application" class="md-nav__link">
+      Develop scoring app with cloud pak for application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/build-run/" title="Build and run the solution on Openshift" class="md-nav__link">
+      Build and run the solution on Openshift
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/integration-tests/" title="Run integration tests" class="md-nav__link">
+      Run integration tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Devops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Devops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infuse/dev-scoring/" title="Develop the scoring app with event messaging and microprofile" class="md-nav__link">
+      Develop the scoring app with event messaging and microprofile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../devops/ci/" title="Continuous Integration" class="md-nav__link">
+      Continuous Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../devops/cd/" title="Continuous Deployment" class="md-nav__link">
+      Continuous Deployment
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../compendium/" title="Compendium" class="md-nav__link">
+      Compendium
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-and-save-telemetry-data-with-kubernetes-job-running-on-remote-cluster" title="Create and save telemetry data with Kubernetes Job running on remote cluster" class="md-nav__link">
+    Create and save telemetry data with Kubernetes Job running on remote cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-local-telemetry-data-manually" title="Create local telemetry data manually" class="md-nav__link">
+    Create local telemetry data manually
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-data-as-csv-file" title="Generate data as csv file" class="md-nav__link">
+    Generate data as csv file
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-the-python-environment" title="Start the python environment" class="md-nav__link">
+    Start the python environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-power-off-metrics" title="Generate power off metrics" class="md-nav__link">
+    Generate power off metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-co2-sensor-malfunction-in-same-file" title="Generate Co2 sensor malfunction in same file" class="md-nav__link">
+    Generate Co2 sensor malfunction in same file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-o2-sensor-malfunction-in-same-file" title="Generate O2 sensor malfunction in same file" class="md-nav__link">
+    Generate O2 sensor malfunction in same file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-local-telemetry-data-to-mongodb" title="Save local telemetry data to MongoDB" class="md-nav__link">
+    Save local telemetry data to MongoDB
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-mongodb-as-service-on-ibm-cloud" title="Using Mongodb as service on IBM Cloud" class="md-nav__link">
+    Using Mongodb as service on IBM Cloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-python-environment" title="Start python environment" class="md-nav__link">
+    Start python environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-data-from-csv-file" title="Add data from csv file" class="md-nav__link">
+    Add data from csv file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-data-using-the-telemetry-repository-of-the-simulator" title="Add data using the telemetry repository of the simulator" class="md-nav__link">
+    Add data using the telemetry repository of the simulator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-data-with-mongo-cli" title="Verify data with mongo CLI" class="md-nav__link">
+    Verify data with mongo CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-mongodb-on-openshift-42-on-premise" title="Using MongoDB on Openshift 4.2 on-premise" class="md-nav__link">
+    Using MongoDB on Openshift 4.2 on-premise
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-records-in-database" title="Delete records in database" class="md-nav__link">
+    Delete records in database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/edit/master/docs/collect/generate-telemetry.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="generate-telemetry-data-in-mongodb">Generate telemetry data in MongoDB</h1>
+<p>We are using the simulator to generate data. In the industry, when developing new manufactured product, the engineers do not have a lot of data so they also use a mix of real sensors with simulators to create fake but realistic data to develop and test their models.</p>
+<p>The historical data need to represent failure and represent the characteristics of a Reefer container. We have defined some sensors to get interesting correlated or independent features.</p>
+<p>As of now, our telemetry event structure can be seen in this <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/tree/master/data_schema/reefer_telemetry_value.avsc">avro schema</a>.</p>
+<p>For the machine learning environment we can use a csv file or mongodb database or kafka topic as data source.  The data generation environment looks like in the figure below:</p>
+<p><img alt="Data collection Simulation" src="../images/data-collect.png" />
+<strong>Figure 1: Data collection Simulation</strong></p>
+<p>The simulator can run as a standalone tool (1) to create training and test data to be saved in a remote mongodb database or can be used to save to csv file. when it runs to simulate reefer container telemetry generation (2), it creates events to Kafka topic, and a stream application can save telemetry records to MongoDB too.</p>
+<p>We use <a href="https://cloud.ibm.com/catalog/services/databases-for-mongodb">MongoDB as a Service</a> on <a href="https://cloud.ibm.com/catalog?category=databases">IBM Cloud</a> in our reference implementations.</p>
+<p><img alt="IBM Cloud Database" src="../../environments/images/ibm-cloud-dbs.png" />
+<strong>Figure 2: IBM Cloud Database</strong></p>
+<p>We have provided the following documented methods for populating the Product database:</p>
+<ol>
+<li><a href="#create-and-save-telemetry-data-with-kubernetes-job-running-on-remote-cluster">Create and save telemetry data with Kubernetes Job running on remote cluster</a> <em>(RECOMMENDED)</em></li>
+<li><a href="#create-local-telemetry-data-manually">Create local telemetry data manually</a></li>
+<li><a href="#save-local-telemetry-data-to-mongodb">Save local telemetry data to MongoDB</a></li>
+</ol>
+<h2 id="create-and-save-telemetry-data-with-kubernetes-job-running-on-remote-cluster">Create and save telemetry data with Kubernetes Job running on remote cluster</h2>
+<p>In an effort to keep development systems as clean as possible and speed up deployment of various scenarios, our deployment tasks have been encapsulated in <a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">Kubernetes Jobs</a>. These are runnable on any Kubernetes platform, including OpenShift.</p>
+<p>The predefined job for this task will create the required telemetry data and save it directly to the configured MongoDB database instance. This is the most direct method for telemetry data generation and what is necessary for the "happy path" version of the environment deployment. If you have use case needs that require other locations for data to be saved or transmitted, you can either adapt the Job here or follow the other sections of this document.</p>
+<ol>
+<li>
+<p>Utilizing <a href="https://cloud.ibm.com/catalog/services/databases-for-mongodb">Databases for MongoDB</a> on IBM Cloud, the following Kubernetes Secrets are required to be created from the auto-generated <em>Service credentials</em> in the target namespace:</p>
+<ol>
+<li><code>mongodb-url</code> <em>(in the format of <code>hostname-a,hostname-b</code>, as the endpoint is a paired replica set)</em>
+  <div class="codehilite"><pre><span></span>kubectl create secret generic mongodb-url --from-literal<span class="o">=</span><span class="nv">binding</span><span class="o">=</span><span class="s1">&#39;1a2...domain.cloud:30796,1a2c....cloud:30796&#39;</span>
+</pre></div></li>
+<li><code>mongodb-user</code>
+  <div class="codehilite"><pre><span></span>kubectl create secret generic mongodb-user --from-literal<span class="o">=</span><span class="nv">binding</span><span class="o">=</span><span class="s1">&#39;ibm_cloud_...&#39;</span>
+</pre></div></li>
+<li><code>mongodb-pwd</code>
+  <div class="codehilite"><pre><span></span>kubectl create secret generic mongodb-pwd --from-literal<span class="o">=</span><span class="nv">binding</span><span class="o">=</span><span class="s1">&#39;335....223&#39;</span>
+</pre></div></li>
+<li><code>mongodb-ca-pem</code> <em>(this requires use of the <a href="https://cloud.ibm.com/docs/databases-cli-plugin?topic=cloud-databases-cli-cdb-reference">Cloud Databases CLI Plug-in</a> for the IBM Cloud CLI)</em>
+  <div class="codehilite"><pre><span></span>ibmcloud cdb deployment-cacert <span class="o">[</span>MongoDB on IBM Cloud service instance name<span class="o">]</span> &gt; mongodb.crt
+kubectl create secret generic mongodb-ca-pem --from-literal<span class="o">=</span><span class="nv">binding</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cat mongodb.crt<span class="k">)</span><span class="s2">&quot;</span>
+</pre></div></li>
+</ol>
+</li>
+<li>
+<p>Review <code>/scripts/createMongoTelemetryData.yaml</code> and update <strong>lines 32, 34, 36, or 38</strong> with any additional modifications to the generated telemetry data. Additional rows can be added as needed in the same job execution. The following fields are acceptable inputs:</p>
+<ol>
+<li><code>stype</code> can the <code>normal</code>, <code>poweroff</code>, <code>o2sensor</code>, and <code>co2sensor</code>.</li>
+<li><code>cid</code> can be <code>C01</code>, <code>C02</code>, <code>C03</code>, or <code>C04</code>.</li>
+<li><code>pid</code> can be <code>P01</code>, <code>P02</code>, <code>P03</code>, or <code>P04</code>.</li>
+<li><code>records</code> can be any positive integer (within reason).</li>
+</ol>
+</li>
+<li>
+<p>Create the <code>create-telemetry-data</code> Job from the root of the <code>refarch-reefer-ml</code> repository:
+<div class="codehilite"><pre><span></span>kubectl apply -f scripts/createMongoTelemetryData.yaml
+</pre></div></p>
+</li>
+<li>
+<p>You can tail the created pod's output to see the progress of the database initialization:
+<div class="codehilite"><pre><span></span>kubectl logs -f --selector<span class="o">=</span>job-name<span class="o">=</span>create-telemetry-data
+</pre></div></p>
+</li>
+</ol>
+<h2 id="create-local-telemetry-data-manually">Create local telemetry data manually</h2>
+<p>If not done yet, you can use our docker image to get an isolated python environment. For that do the following preparation steps:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># From refarch_reefer_ml folder</span>
+<span class="nb">cd</span> docker
+docker build -t ibmcase/python -f docker-python-tools.yaml .
+docker images <span class="p">|</span> grep ibmcase
+<span class="c1"># .... results should include</span>
+ibmcase/python                                  latest                 a89153c0e14f
+</pre></div>
+
+<p>The dockerfile installed the needed dependencies and use pipenv. Also we preset the PYTHONPATH environment variable to <code>/home</code> to specify where python should find the application specifics modules.</p>
+<h3 id="generate-data-as-csv-file">Generate data as csv file</h3>
+<h4 id="start-the-python-environment">Start the python environment</h4>
+<p>From the docker image created before, use the provided script as:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># From refarch_reefer_ml folder</span>
+./startPythonEnv.sh
+</pre></div>
+
+<h4 id="generate-power-off-metrics">Generate power off metrics</h4>
+<p>When a reefer container loses power, restart and reloose it, it may become an issue. This is the goal of this simulation.</p>
+<p>The simulator accepts different arguments as specified below:</p>
+<div class="codehilite"><pre><span></span>usage reefer_simulator-tool
+     --stype <span class="o">[</span>poweroff <span class="p">|</span> co2sensor <span class="p">|</span> o2sensor <span class="p">|</span> normal<span class="o">]</span>
+    --cid <span class="o">[</span>C01 <span class="p">|</span> C02 <span class="p">|</span> C03 <span class="p">|</span> C04 <span class="p">|</span> C05<span class="o">]</span>
+    --product_id <span class="o">[</span> P01 <span class="p">|</span> P02 <span class="p">|</span> P03 <span class="p">|</span> P04 <span class="p">|</span> P05 <span class="o">]</span>
+    --records &lt;the number of records to generate&gt;
+    --file &lt;the filename to create&gt;
+    --append <span class="p">|</span> --db
+</pre></div>
+
+<ul>
+<li>The <code>cid</code> is for the container id. As the simulator is taking some data from internal datasource you can use only one of those values: <code>[C01 | C02 | C03 | C04 | C05]</code></li>
+<li><code>product_id</code> is also one of the value <code>[ P01 | P02 | P03 | P04 | P05]</code>, as the simulator will derive the target temperature and humidity level from its internal datasource:
+    ('P01','Carrots',1,4,0.4),
+    ('P02','Banana',2,6,0.6),
+    ('P03','Salad',1,4,0.4),
+    ('P04','Avocado',2,6,0.4),
+    ('P05','Tomato',1,6,0.4);</li>
+<li><code>--db</code> is when you want to save the telemetry into mongodb DB. In this case be sure to have set the credentials and URL in the <code>scripts/setenv.sh</code> script (see the <code>scripts/setenv-tmp.sh</code> template file)</li>
+<li><code>--file</code> is to specify a csv file to write the data</li>
+<li>
+<p><code>--append</code> is used to append the output of this run to an existing file: It permits to accumulate different simulation in the same dataset.</p>
+</li>
+<li>
+<p>(Re)create a new file. It is an important step to get the column names as first row.</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span>python simulator/reefer_simulator_tool.py --stype poweroff --cid C01 --records <span class="m">1000</span> --product_id P02 --file telemetries.csv
+</pre></div>
+
+<ul>
+<li>then new records are added by appending to existing file</li>
+</ul>
+<div class="codehilite"><pre><span></span>python simulator/reefer_simulator_tool.py --cid C03 --product_id P03 --records <span class="m">1000</span> --file telemetries.csv --stype poweroff --append
+</pre></div>
+
+<p>The results looks like:</p>
+<div class="codehilite"><pre><span></span>    Generating  <span class="m">1000</span>  poweroff metrics
+
+    Timestamp   ID  Temperature<span class="o">(</span>celsius<span class="o">)</span> Target_Temperature<span class="o">(</span>celsius<span class="o">)</span>      Power  PowerConsumption ContentType  O2 CO2  Time_Door_Open Maintenance_Required Defrost_Cycle
+    <span class="m">1</span>.000000  <span class="m">2019</span>-06-30 T15:43 Z  <span class="m">101</span>              <span class="m">3</span>.416766                           <span class="m">4</span>  <span class="m">17</span>.698034          <span class="m">6</span>.662044           <span class="m">1</span>  <span class="m">11</span>   <span class="m">1</span>        <span class="m">8</span>.735273                    <span class="m">0</span>             <span class="m">6</span>
+    <span class="m">1</span>.001001  <span class="m">2019</span>-06-30 T15:43 Z  <span class="m">101</span>              <span class="m">4</span>.973630                           <span class="m">4</span>   <span class="m">3</span>.701072          <span class="m">8</span>.457314           <span class="m">1</span>  <span class="m">13</span>   <span class="m">3</span>        <span class="m">5</span>.699655                    <span class="m">0</span>             <span class="m">6</span>
+    <span class="m">1</span>.002002  <span class="m">2019</span>-06-30 T15:43 Z  <span class="m">101</span>              <span class="m">1</span>.299275                           <span class="m">4</span>   <span class="m">7</span>.629094
+</pre></div>
+
+<p>From the two previous commands you should have 2001 rows (one for the header which will be used in the model creation):</p>
+<div class="codehilite"><pre><span></span>wc -l telemetries.csv
+<span class="m">2001</span> telemetries.csv
+</pre></div>
+
+<h4 id="generate-co2-sensor-malfunction-in-same-file">Generate Co2 sensor malfunction in same file</h4>
+<p>In the same way as above the simulator can generate data for Co2 sensor malfunction using the command:</p>
+<div class="codehilite"><pre><span></span>python simulator/reefer_simulator_tool.py --cid C03 --product_id P02 --records <span class="m">1000</span> --file basedata --stype co2sensor --append
+</pre></div>
+
+<h4 id="generate-o2-sensor-malfunction-in-same-file">Generate O2 sensor malfunction in same file</h4>
+<div class="codehilite"><pre><span></span>python simulator/reefer_simulator_tool.py --cid C03 --product_id P02 --records <span class="m">1000</span> --file basedata --stype o2sensor --append
+</pre></div>
+
+<h2 id="save-local-telemetry-data-to-mongodb">Save local telemetry data to MongoDB</h2>
+<p>MongoDB is a popular document-based database that allows developers to quickly build projects without worrying about schema. Mongo components include:</p>
+<ul>
+<li>mongod - the core process that runs the actual database</li>
+<li>mongos - controls routing to the databases in case of sharding</li>
+<li>config servers (CSRS) - stores the metadata in a sharded environment.</li>
+</ul>
+<p>We propose to persist telemetry for a long time period. For example we can configure Kafka topic to persist telemetries over a period of 20 days, but have another component to continuously move events as JSON documents inside Mongodb.</p>
+<h3 id="using-mongodb-as-service-on-ibm-cloud">Using Mongodb as service on IBM Cloud</h3>
+<p>Create the MongoDB service on IBM cloud using default configuration and add a service credentials to get the mongodb.composed url: (something starting as <code>mongodb://ibm_cloud_e154ff52_ed</code>) username and password.</p>
+<p>Set those environment variables in <code>scripts/setenv.sh</code> the <code>export MONGO_DB_URL="mongodb://ibm_c..."</code></p>
+<p>Get the TLS certificate as pem file:</p>
+<div class="codehilite"><pre><span></span>ibmcloud cdb deployment-cacert gse-eda-mongodb &gt; certs/mongodbca.pem
+</pre></div>
+
+<h3 id="start-python-environment">Start python environment</h3>
+<p>Use IBMCLOUD if you use mongodb, postgresql and kafka on cloud, or LOCAL for kafka and postgresql running via docker compose.</p>
+<div class="codehilite"><pre><span></span> ./startPythonEnv IBMCLOUD
+
+root@03721594782f: <span class="nb">cd</span> /home
+</pre></div>
+
+<p><em>If you are using your own environment, to access mongodb we use the pymongo driver (<code>pip install pymongo</code>)</em></p>
+<p>The code below is a simple example of how to access mongodb.</p>
+<div class="codehilite"><pre><span></span> <span class="n">URL</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;MONGO_DB_URL&#39;</span><span class="p">)</span>
+ <span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span><span class="n">ssl</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">ssl_ca_certs</span><span class="o">=</span><span class="s1">&#39;/home/certs/mongodbca.pem&#39;</span><span class="p">)</span>
+ <span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="p">[</span><span class="s1">&#39;ibmclouddb&#39;</span><span class="p">]</span>
+
+ <span class="c1"># insert a record</span>
+ <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">telemetries</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">telemetry</span><span class="p">)</span>
+ <span class="n">telemetry</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">telemetries</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s2">&quot;_id&quot;</span><span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">inserted_id</span><span class="p">)})</span>
+
+ <span class="c1"># get all the records</span>
+ <span class="n">telemetries</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">telemetries</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+ <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">telemetries</span><span class="p">:</span>
+</pre></div>
+
+<p>See the rest of the code in <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/blob/master/ml/data/ToMongo.py">ml/data/ToMongo.py</a> to load records from CSV file, or the <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/blob/master/simulator/infrastructure/ReeferRepository.py">simulator/infrastructure/ReeferRepository.py</a> for the one generating metrics and uploading them directly to MongoDB.</p>
+<p>We propose two approaches to load data to MongoDB: use created csv file, or run the simulator tool connected to MongoDB.</p>
+<h3 id="add-data-from-csv-file">Add data from csv file</h3>
+<p>Using the <code>ToMongo.py</code> script we can load the data from the <code>ml/data/telemetries.csv</code> file to mongodb. In a Terminal window uses the following commmand:</p>
+<div class="codehilite"><pre><span></span>./startPythonEnv.sh IBMCLOUD
+
+<span class="nb">cd</span> ml/data
+
+python ToMongo.py
+</pre></div>
+
+<h3 id="add-data-using-the-telemetry-repository-of-the-simulator">Add data using the telemetry repository of the simulator</h3>
+<p>Verify your MONGO* environment variables are set according to your created service in the <code>scriptssetenv.sh</code> file.</p>
+<div class="codehilite"><pre><span></span>./startPythonEnv.sh IBMCLOUD
+
+<span class="nb">cd</span> simulation
+
+python simulator/reefer_simulator_tool.py --cid C03 --product_id P02 --records <span class="m">1000</span>  --stype poweroff --db
+
+python simulator/reefer_simulator_tool.py --cid C03 --product_id P02 --records <span class="m">1000</span>  --stype co2sensor --db
+
+python simulator/reefer_simulator_tool.py --cid C03 --product_id P02 --records <span class="m">1000</span>  --stype o2sensor --db
+</pre></div>
+
+<h3 id="verify-data-with-mongo-cli">Verify data with mongo CLI</h3>
+<p>To verify the data loaded into the database we use <a href="https://docs.mongodb.com/manual/installation/">mongo</a> CLI with the following command:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># to connect</span>
+mongo -u <span class="nv">$USERNAME</span> -p <span class="nv">$PASSWORD</span> --tls --tlsCAFile mongodb.pem --authenticationDatabase admin --host replset/1a2ce8ca-&lt;&gt;.bn&lt;&gt;c0.databases.appdomain.cloud:30796 --tlsAllowInvalidCertificates
+</pre></div>
+
+<p><em>The full host name is masked</em>.</p>
+<p>The USERNAME and PASSWORD are environment variables you set from the IBM Cloud service credentials. Something like:</p>
+<div class="codehilite"><pre><span></span>{
+  &quot;connection&quot;: {
+    &quot;cli&quot;: {
+      &quot;arguments&quot;: [
+        [
+          &quot;-u&quot;,
+          &quot;ibm_cloud_&lt;&gt;_48b1_b899&quot;,
+          &quot;-p&quot;,
+          &quot;3359192a&lt;&gt;e5fbdf51fd573676e58aff4f9e223&quot;,
+</pre></div>
+
+<p>The <code>mongodb.pem</code> is the certificate in text save in a file. To get this certificate you can use the following command:</p>
+<div class="codehilite"><pre><span></span>ibmcloud cdb deployment-cacert gse-eda-mongodb &gt; mongodb.pem
+</pre></div>
+
+<p>or by using the IBM Cloud mongodb service user interface (Manage menu):</p>
+<p><img alt="" src="../images/tls-certificat.png" /></p>
+<p>Once connected use the ibmclouddb database with mongo CLI:</p>
+<div class="codehilite"><pre><span></span>MongoDB server version: 4.2.0
+replset:PRIMARY&gt; use ibmclouddb
+replset:PRIMARY&gt; db.getCollection(&quot;telemetries&quot;).find()
+</pre></div>
+
+<h3 id="using-mongodb-on-openshift-42-on-premise">Using MongoDB on Openshift 4.2 on-premise</h3>
+<p>We assume you have provisioned an Openshift 4.2 cluster and logged in. We use the following container image: <code>centos/mongodb-36-centos7</code>. So to install it, we use the following command:</p>
+<div class="codehilite"><pre><span></span>oc new-app -e \
+    MONGODB_USER=mongo,MONGODB_PASSWORD=&lt;password&gt;,MONGODB_DATABASE=reeferdb,MONGODB_ADMIN_PASSWORD=&lt;admin_password&gt; \
+    centos/mongodb-36-centos7
+</pre></div>
+
+<p>Connect to the pod and then use the mongo CLI</p>
+<div class="codehilite"><pre><span></span>$ oc get pods
+NAME                                         READY     STATUS             RESTARTS   AGE
+mongodb-36-centos7-1-wcn7h                   <span class="m">1</span>/1       Running            <span class="m">0</span>          4d
+
+$ oc rsh mongodb-36-centos7-1-wcn7h
+bash-4.2$ mongo -u <span class="nv">$MONGODB_USER</span> -p <span class="nv">$MONGODB_PASSWORD</span> <span class="nv">$MONGODB_DATABASE</span>
+MongoDB shell version: <span class="m">2</span>.4.9
+connecting to: reeferdb
+&gt; show collections
+</pre></div>
+
+<p>To remove the db on openshift: <code>oc delete dc</code></p>
+<p>The document saved in mongo will not be a flat record as produced by the simulator when it creates records to Kafka, but a Json document which matches the following format, where sensors are in their own object:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span> <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-04 T15:31 Z&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;containerID&quot;</span><span class="p">:</span> <span class="s2">&quot;C100&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;product_id&quot;</span><span class="p">:</span> <span class="s2">&quot;P02&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;content_type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nt">&quot;sensors&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="nt">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">5.49647</span><span class="p">,</span>
+   <span class="nt">&quot;oxygen_level&quot;</span> <span class="p">:</span> <span class="mf">20.4543</span><span class="p">,</span>
+   <span class="nt">&quot;nitrogen_level&quot;</span> <span class="p">:</span> <span class="mf">79.4046</span><span class="p">,</span>
+   <span class="nt">&quot;carbon_dioxide_level&quot;</span> <span class="p">:</span> <span class="mf">4.42579</span><span class="p">,</span>
+   <span class="nt">&quot;humidity_level&quot;</span> <span class="p">:</span> <span class="mf">60.3148</span><span class="p">,</span>
+   <span class="nt">&quot;fan_1&quot;</span><span class="p">:</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;fan_2&quot;</span> <span class="p">:</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;fan_3&quot;</span> <span class="p">:</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;ambiant_temperature&quot;</span><span class="p">:</span> <span class="mf">19.8447</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;target_temperature&quot;</span><span class="p">:</span> <span class="mf">6.0</span><span class="p">,</span>
+   <span class="nt">&quot;kilowatts&quot;</span><span class="p">:</span> <span class="mf">3.44686</span><span class="p">,</span>
+   <span class="nt">&quot;latitude&quot;</span><span class="p">:</span> <span class="s2">&quot;37.8226902168957,&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;longitude&quot;</span><span class="p">:</span> <span class="s2">&quot;-122.3248956640928&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;time_door_open&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="nt">&quot;defrost_cycle&quot;</span><span class="p">:</span> <span class="mi">6</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>First be sure to set at least the following environment variables in the <code>setenv.sh</code> file</p>
+<div class="codehilite"><pre><span></span>MONGO_DB_URL, MONGO_SSL_PEM
+</pre></div>
+
+<p>If not done before or to ensure the mongo connection works fine, run the ReeferRepository.py tool to create the telemetries collection using the following command:</p>
+<div class="codehilite"><pre><span></span>./startPythonEnv.sh IBMCLOUD
+&gt; python simulator/infrastructure/ReeferRepository.py
+</pre></div>
+
+<h3 id="delete-records-in-database">Delete records in database</h3>
+<p>In mongo CLI do:</p>
+<div class="codehilite"><pre><span></span>db.telemetries.deleteMany<span class="o">({})</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../environments/cp4d/" title="Cloud Pak for Data" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Cloud Pak for Data
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../cp4i-es/" title="Data ingestion and in motion with Cloud Pak for Integration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Data ingestion and in motion with Cloud Pak for Integration
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

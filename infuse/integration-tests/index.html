@@ -1,0 +1,1014 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Run integration tests - Vaccine Cold Chain Monitoring</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#integration-tests-to-proof-the-solution" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Vaccine Cold Chain Monitoring
+            </span>
+            <span class="md-header-nav__topic">
+              Run integration tests
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Vaccine Cold Chain Monitoring" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Vaccine Cold Chain Monitoring
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Introduction
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="What you will learn" class="md-nav__link">
+      What you will learn
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Environments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Environments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/event-streams/" title="Event Streams environment" class="md-nav__link">
+      Event Streams environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/mongo/" title="MongoDB on IBM Cloud" class="md-nav__link">
+      MongoDB on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/postgresql/" title="Postgresql on IBM Cloud" class="md-nav__link">
+      Postgresql on IBM Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environments/cp4d/" title="Cloud Pak for Data" class="md-nav__link">
+      Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      AI Ladder
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        AI Ladder
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Collect
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Collect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-1" type="checkbox" id="nav-3-1-1">
+    
+    <label class="md-nav__link" for="nav-3-1-1">
+      Preparing data for demonstration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-1">
+        Preparing data for demonstration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collect/generate-telemetry/" title="Generate telemetry data" class="md-nav__link">
+      Generate telemetry data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collect/cp4i-es/" title="Data ingestion and in motion with Cloud Pak for Integration" class="md-nav__link">
+      Data ingestion and in motion with Cloud Pak for Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../collect/cp4d-collect-data/" title="Collect data with Cloud Pak for Data" class="md-nav__link">
+      Collect data with Cloud Pak for Data
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Analyze
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Analyze
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analyze/ws-ml-dev/" title="Define the anomaly detection scoring model with Watson Studio" class="md-nav__link">
+      Define the anomaly detection scoring model with Watson Studio
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Infuse
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Infuse
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev-scoring/" title="Develop scoring app with cloud pak for application" class="md-nav__link">
+      Develop scoring app with cloud pak for application
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../build-run/" title="Build and run the solution on Openshift" class="md-nav__link">
+      Build and run the solution on Openshift
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Run integration tests
+      </label>
+    
+    <a href="./" title="Run integration tests" class="md-nav__link md-nav__link--active">
+      Run integration tests
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-reefer-container-events-consumer" title="Start Reefer container events consumer" class="md-nav__link">
+    Start Reefer container events consumer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-predictive-scoring-service" title="Start the predictive scoring service" class="md-nav__link">
+    Start the predictive scoring service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-simulator-web-app" title="Start the simulator web app" class="md-nav__link">
+    Start the simulator web app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-a-simulation" title="Start a simulation" class="md-nav__link">
+    Start a simulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate-integration-tests" title="Validate integration tests" class="md-nav__link">
+    Validate integration tests
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulator-trace" title="Simulator trace" class="md-nav__link">
+    Simulator trace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-trace" title="Scoring trace" class="md-nav__link">
+    Scoring trace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-consumer-trace" title="Container consumer trace" class="md-nav__link">
+    Container consumer trace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Devops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Devops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../simul-app/" title="Develop the simulation app" class="md-nav__link">
+      Develop the simulation app
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev-scoring/" title="Develop the scoring app with event messaging and microprofile" class="md-nav__link">
+      Develop the scoring app with event messaging and microprofile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../devops/ci/" title="Continuous Integration" class="md-nav__link">
+      Continuous Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../devops/cd/" title="Continuous Deployment" class="md-nav__link">
+      Continuous Deployment
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-nav__link">
+      Engineer dispatching with Business process with Cloud Pak for Automation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../compendium/" title="Compendium" class="md-nav__link">
+      Compendium
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-requisites" class="md-nav__link">
+    Pre-requisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-reefer-container-events-consumer" title="Start Reefer container events consumer" class="md-nav__link">
+    Start Reefer container events consumer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-predictive-scoring-service" title="Start the predictive scoring service" class="md-nav__link">
+    Start the predictive scoring service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-simulator-web-app" title="Start the simulator web app" class="md-nav__link">
+    Start the simulator web app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-a-simulation" title="Start a simulation" class="md-nav__link">
+    Start a simulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate-integration-tests" title="Validate integration tests" class="md-nav__link">
+    Validate integration tests
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulator-trace" title="Simulator trace" class="md-nav__link">
+    Simulator trace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-trace" title="Scoring trace" class="md-nav__link">
+    Scoring trace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-consumer-trace" title="Container consumer trace" class="md-nav__link">
+    Container consumer trace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/vaccine-cold-chain.git/edit/master/docs/infuse/integration-tests.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="integration-tests-to-proof-the-solution">Integration tests to proof the solution</h1>
+<p>Recall that the architecture of the deployed components look like in the figure below: </p>
+<p><img alt="" src="../images/mvp-runtime.png" /></p>
+<p>So the first component to start is the container consumer which consumes events from the kafka <code>containers</code> topic. This topic is where the microservices will post messages about a Reefer container. It is used by this microservice already: <a href="https://github.com/ibm-cloud-architecture/refarch-kc-container-ms/">Reefer container manager</a>.</p>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<p>Be sure to have set the environment variables in the <code>./scripts/setenv.sh</code> to point to your Event Stream or Kafka deployment.</p>
+<p>You need to start four terminal windows if you run the solution locally on you laptop, and only 2 terminals if you run the solution on our deployed cluster.</p>
+<div class="admonition note">
+<p class="admonition-title">Note<p>Our deployed cluster in on IBM Cloud Openshift 3.11 cluster.</p>
+</p>
+</div>
+<h2 id="start-reefer-container-events-consumer">Start Reefer container events consumer</h2>
+<p>In the <code>consumer</code> folder use the command:</p>
+<div class="codehilite"><pre><span></span>./runContainerConsumer.sh
+</pre></div>
+
+<p>This script starts the docker python image, we built earlier and use the <a href="https://github.com/ibm-cloud-architecture/refarch-reefer-ml/blob/master/consumer/ConsumeContainers.py">ConsumeContainers.py</a> module.</p>
+<h2 id="start-the-predictive-scoring-service">Start the predictive scoring service</h2>
+<p>We can run it locally or on kubernetes cluster like Openshift. Under <code>scoring</code> folder, use the command:</p>
+<p><div class="codehilite"><pre><span></span>./runScoringApp.sh
+</pre></div>
+In the beginning of the trace log you should see the <code>bootstrap.servers</code> brokers list, the <code>group.id</code>, and api key as <code>sasl.password</code>.</p>
+<p>Recalls the scoring is a producer and a consumer.</p>
+<p>See the <a href="https://ibm-cloud-architecture.github.io/refarch-reefer-ml/#scoring:-build-and-run-on-openshift">build and run on Openshift section</a> for running on kubernetes cluster.</p>
+<h2 id="start-the-simulator-web-app">Start the simulator web app</h2>
+<p>Under the <code>simulator</code> folder </p>
+<div class="codehilite"><pre><span></span>./runReeferSimulator.sh
+</pre></div>
+
+<p>To build and run it on Openshift review <a href="#simulator:-build-and-run-on-openshift">this section</a>.</p>
+<h2 id="start-a-simulation">Start a simulation</h2>
+<p>Under the <code>scripts</code> folder</p>
+<div class="codehilite"><pre><span></span>./sendSimulControl.sh 
+</pre></div>
+
+<h2 id="validate-integration-tests">Validate integration tests</h2>
+<p>To test your local deployment
+<div class="codehilite"><pre><span></span>./sendSimulControl.sh localhost:8080 poweroff
+</pre></div></p>
+<p>or to test on our cloud based deployed solution</p>
+<div class="codehilite"><pre><span></span>./sendSimulControl.sh
+</pre></div>
+
+<p>The traces will look like these:</p>
+<h3 id="simulator-trace">Simulator trace</h3>
+<p>The trace from the pod demonstrate the configuration and the control message received at the POST operation, and then the event generated. </p>
+<div class="codehilite"><pre><span></span>{&#39;bootstrap.servers&#39;: &#39;broker-3-&quot;&lt;hidden-part&gt;.eventstreams.cloud.ibm.com:9093,broker-1-&quot;&lt;hidden-part&gt;.eventstreams.cloud.ibm.com:9093,broker-0-&quot;&lt;hidden-part&gt;.eventstreams.cloud.ibm.com:9093,broker-5-&quot;&lt;hidden-part&gt;.eventstreams.cloud.ibm.com:9093,broker-2-&quot;&lt;hidden-part&gt;.eventstreams.cloud.ibm.com:9093,broker-4-&quot;&lt;hidden-part&gt;.eventstreams.cloud.ibm.com:9093&#39;, &#39;group.id&#39;: &#39;ReeferMetricsSimulator&#39;, &#39;security.protocol&#39;: &#39;sasl_ssl&#39;, &#39;sasl.mechanisms&#39;: &#39;PLAIN&#39;, &#39;ssl.ca.location&#39;: &#39;/etc/pki/tls/cert.pem&#39;, &#39;sasl.username&#39;: &#39;token&#39;, &#39;sasl.password&#39;: &#39;&lt;hidden-part&gt;&#39;}
+
+...
+
+{&#39;containerID&#39;: &#39;c101&#39;, &#39;simulation&#39;: &#39;poweroff&#39;, &#39;nb_of_records&#39;: 50, &#39;good_temperature&#39;: 4.4}
+ Reefer contaimer metric event to send:{&quot;containerID&quot;: &quot;c101&quot;, &quot;timestamp&quot;: 1566859800, &quot;type&quot;: &quot;ContainerMetric&quot;, &quot;payload&quot;: &quot;(&#39;2019-08-26 T22:50 Z&#39;, &#39;c101&#39;, 2.0905792037649547, 4.4, 16.282392569138707, 6.603341673152029, 2, 16, 8.827184272293419, 6.33603138958275, 0, 5)&quot;}
+Message delivered to containerMetrics [0]
+ Reefer contaimer metric event to send:{&quot;containerID&quot;: &quot;c101&quot;, &quot;timestamp&quot;: 1566859860, &quot;type&quot;: &quot;ContainerMetric&quot;, &quot;payload&quot;: &quot;(&#39;2019-08-26 T22:51 Z&#39;, &#39;c101&#39;, 2.0905792037649547, 4.4, 0, -0.04371530981778182, 2, 3, 6.295683442800409, 5.36863196753292, 0, 1)&quot;}
+Message delivered to containerMetrics [0]
+
+...
+</pre></div>
+
+<h3 id="scoring-trace">Scoring trace</h3>
+<div class="codehilite"><pre><span></span>
+</pre></div>
+
+<h3 id="container-consumer-trace">Container consumer trace</h3>
+<div class="codehilite"><pre><span></span>@@@ poll next container from containers partition: [0] at offset 3 with key b&#39;c100&#39;:
+    value: {&quot;timestamp&quot;: 1566854815, &quot;type&quot;: &quot;ContainerMaintenance&quot;, &quot;version&quot;: &quot;1&quot;, &quot;containerID&quot;: &quot;c100&quot;, &quot;payload&quot;: {&quot;containerID&quot;: &quot;c100&quot;, &quot;type&quot;: &quot;Reefer&quot;, &quot;status&quot;: &quot;MaintenanceNeeded&quot;, &quot;Reason&quot;: &quot;Predictive maintenance scoring found a risk of failure&quot;}}
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../build-run/" title="Build and run the solution on Openshift" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Build and run the solution on Openshift
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../bpm/readme/" title="Engineer dispatching with Business process with Cloud Pak for Automation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Engineer dispatching with Business process with Cloud Pak for Automation
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
